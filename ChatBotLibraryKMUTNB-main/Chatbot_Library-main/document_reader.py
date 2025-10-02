@@ -105,7 +105,7 @@ def _read_pdf_pdfminer(path: str) -> Optional[str]:
 
 def _summarize_with_gemini(file_path: str) -> Optional[str]:
     """
-    Fallback ขั้นสุด: อัปโหลด PDF ให้ Gemini 1.5 อ่าน/มองตรง ๆ
+    Fallback ขั้นสุด: อัปโหลด PDF ให้ Gemini 2.5 อ่าน/มองตรง ๆ
     ใช้ได้แม้เป็นสแกนรูป (OCR/vision) แล้วสรุปเป็น knowledge สำหรับ chatbot
     NOTE: genai.configure(...) ทำแล้วใน app.py ห้ามตั้งซ้ำที่นี่
     """
@@ -113,7 +113,7 @@ def _summarize_with_gemini(file_path: str) -> Optional[str]:
         return None
     try:
         uploaded = genai.upload_file(file_path)  # อัปโหลดไฟล์
-        model = genai.GenerativeModel("gemini-1.5-flash")
+        model = genai.GenerativeModel("gemini-2.5-flash")
         prompt = (
             "คุณคือผู้ช่วยสรุปเอกสารหอสมุด KMUTNB. "
             "สกัดเฉพาะข้อมูลข้อเท็จจริงที่จำเป็นต่อการตอบคำถามผู้ใช้ เช่น "
