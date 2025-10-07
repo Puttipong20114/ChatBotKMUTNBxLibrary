@@ -7,14 +7,14 @@ from google.generativeai.types import HarmCategory, HarmBlockThreshold
 from document_reader import get_kmutnb_summary
 
 # ✅ ตามที่ขอ: ไม่แตะบรรทัดนี้
-genai.configure(api_key="AIzaSyAQhQGbseRkL233XM8t4yz30erVzO_DsWg")
+genai.configure(api_key="AIzaSyD7iaD2M1Ucz33fZMfMxRoOjTJinzEDTH0")
 
 # ----------------- CONFIG -----------------
 generation_config = {
     "temperature": 0.0,
     "top_p": 0.90,
     "top_k": 40,
-    "max_output_tokens": 1024,
+    "max_output_tokens": 2048,
     "response_mime_type": "text/plain",
     "candidate_count": 1,
 }
